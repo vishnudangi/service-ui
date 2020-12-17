@@ -1,0 +1,22 @@
+
+<div class="mackup-listing-container">
+  <div class="top-section">
+    <!-- <a class="create-mockup-button" routerLink="/response-helper" >Response Helper</a>
+    <a class="create-mockup-button" routerLink="/create-mockup" >create mockup</a> -->
+    
+    <!-- Dynamic Response helper -->
+    <h2>Dynamic Response helper</h2>
+    
+  </div>
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-11">Template</div>
+      <div class="col col-22">Description</div>
+    </li>
+    <li class="table-row" *ngFor="let item of responseTempLateList">
+      <div class="col col-11 text-elipses" data-label="Job Id" data-toggle="tooltip" data-placement="bottom" [title]="item.template">{{item.template}}
+      </div>
+      <div class="col col-22 text-elipses" data-label="Customer Name" data-toggle="tooltip" data-placement="bottom" [title]="item.description">{{item.description}}</div>
+    </li>
+  </ul>
+</div>

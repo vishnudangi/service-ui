@@ -1,0 +1,72 @@
+<div class="main-content-container">
+<div class="form-container">
+  <form #api_form="ngForm">
+    <div class="row">
+      <div class="col-sm-9">
+          <div class="form-group has-feedback" >
+              <label>
+                  <span>Request Type</span>
+                  <span class="required">*</span>
+              </label>
+              <select [(ngModel)]="apiType" (change)="apiTypeChange()" [ngModelOptions]="{standalone: true}">
+                <option *ngFor="let api of apiTypeList" [value]="api.value">{{api.label}}</option>
+             </select>
+              <!-- <p class="help-block" *ngIf="(group_name.touched || create_group_form.submitted) && group_name.invalid">
+                  <span *ngIf="group_name.errors.required">
+                      <span class="icon-error-round"></span>
+                      <span [innerText]="'PH_GROUP_NAME_REQUIRED' | translate"></span>
+                  </span>
+              </p> -->
+          </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-9">
+        <div class="form-group has-feedback" >
+            <label>
+                <span>Api Path</span>
+                <span class="required">*</span>
+            </label>
+            <input type="text" name="api_path" [(ngModel)]="apiPath" >
+            <!-- <p class="help-block" *ngIf="(group_name.touched || create_group_form.submitted) && group_name.invalid">
+                <span *ngIf="group_name.errors.required">
+                    <span class="icon-error-round"></span>
+                    <span [innerText]="'PH_GROUP_NAME_REQUIRED' | translate"></span>
+                </span>
+            </p> -->
+        </div>
+    </div>
+</div>
+<div class="row">
+  <div class="col-sm-9">
+      <div class="form-group has-feedback" >
+          <label>
+              <span>Expected Response</span>
+              <span class="required">*</span>
+          </label>
+          <input type="text" name="expected_response" [(ngModel)]="expectedResponse" >
+          <!-- <p class="help-block" *ngIf="(group_name.touched || create_group_form.submitted) && group_name.invalid">
+              <span *ngIf="group_name.errors.required">
+                  <span class="icon-error-round"></span>
+                  <span [innerText]="'PH_GROUP_NAME_REQUIRED' | translate"></span>
+              </span>
+          </p> -->
+      </div>
+  </div>
+</div>
+<div class="row" *ngIf="responseBody">
+  <div class="form-group has-feedback">
+    <label>
+      <span>Response Body</span>
+  </label>
+    <pre class="json-text-container">{{responseBody | json}}</pre>
+  </div>
+
+</div>
+  
+  <div>
+    <button type="button" (click)="saveApiChanges()">Save</button>
+  </div>
+  </form>
+</div>
+</div>

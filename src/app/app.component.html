@@ -1,0 +1,14 @@
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <div>
+    <h2 class="toolbar-heading" (click)="redirectToHome(['/mockup-list'])">SerViz</h2>
+  </div>
+  <div class="navigation-link">
+    <h2 class="toolbar-heading button-service" (click)="redirectToHome(['/service-list'])">Service List</h2>
+  </div>
+</div>
+
+<div class="main-listing-container">
+  <router-outlet></router-outlet>
+</div>

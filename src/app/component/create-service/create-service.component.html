@@ -1,0 +1,64 @@
+<div class="create-mockup-container">
+  <div class="form-container">
+    <form #api_form_service="ngForm">
+      <div class="flex-container">
+        <div class="box-container">
+          <div class="text-center heading-section1">
+            <h2>Create Service</h2>
+          </div>
+          <div class="form-group">
+            <label class="label-style">Name
+              <span class="text-danger">*</span>
+            </label>
+            <input placeholder="Enter Name" class="form-control form-control-width" type="text" name="name" [(ngModel)]="name">
+          </div>
+          <div class="form-group">
+            <label class="label-style">Host
+              <span class="text-danger">*</span>
+            </label>
+            <input placeholder="Enter Host" class="form-control" type="text" name="host" [(ngModel)]="host">
+          </div>
+          <div class="form-group">
+            <label class="label-style">Port
+              <span class="text-danger">*</span>
+            </label>
+            <input placeholder="Enter Port" class="form-control" type="number" name="port" [(ngModel)]="port">
+          </div>
+          <div class="form-group">
+            <label class="label-style">Pings Per Minute
+              <span class="text-danger">*</span>
+            </label>
+            <input placeholder="Enter Pings Per Minute" class="form-control" type="number" name="pingsPerMinute" [(ngModel)]="pingsPerMinute">
+          </div>
+          <div class="form-group">
+            <label class="label-style radio-heading">Active
+              <span class="text-danger">*</span>
+            </label>
+            <div class="row">
+              <div class="col-sm-2 position-relative">
+                <input class="form-control radio-button" type="radio" name="active" [(ngModel)]="active" id="enable_proxy_yes" [value]="true">
+                <label for="enable_proxy_yes" class="radio-label">Active</label>
+              </div>
+              <div class="col-sm-2 position-relative">
+                <input class="form-control radio-button" type="radio" name="active" [(ngModel)]="active" id="enable_proxy_no" [value]="false">
+                <label for="enable_proxy_no" class="radio-label">Inactive</label>
+              </div>
+
+            </div>
+          </div>
+          <div class="text-center form-group">
+            <button class="save-button1" type="button" (click)="saveApiChanges()">Save</button>
+          </div>
+          <!-- <div *ngIf="responseBody">
+            <div class="form-group has-feedback">
+              <label>
+                <span>Response Body</span>
+              </label>
+              <pre class="json-text-container">{{responseBody | json}}</pre>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+.create-mockup-container {
+  /* padding: 50px; */
+}
+
+.left-section {
+  width: 100%;
+    background-color: orange;
+    min-height: 100vh;
+}
+.right-section {
+  width: 100%;
+    background-color: orange;
+    min-height: 100vh;
+}
+.heading-section1 {
+  margin: 10px 0 15px;
+}
+.label-style {
+  display: block;
+  margin-bottom: 3px;
+}
+.radio-heading {
+  margin-bottom: -1px;
+}
+.flex-container {
+  display: flex;
+    justify-content: center;
+}
+.box-container {
+  padding: 5px 12%;
+    border: 1px solid #DDD;
+    margin: 29px;
+    border-radius: 18px;
+}
+.json-text-container {
+  height: auto;
+    max-height: 400px;
+    min-height: 100px;
+    width: 452px;
+    width: 100%;
+    overflow: scroll;
+    border: 1px solid #ddd;
+}
+.position-relative {
+  position: relative;
+}
+.radio-button {
+  width: 40%;
+}
+.save-button1 {
+   appearance: none;
+    width: 100%;
+    min-height: 56px;
+    border-radius: 8px;
+    background-color: #ff6d26;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 12px;
+    border: none;
+    cursor: pointer;
+}
+.radio-label {
+  position: absolute;
+    top: 9px;
+    left: 55%;
+}

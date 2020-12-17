@@ -1,0 +1,103 @@
+<div class="create-mockup-container">
+  <div class="form-container">
+    <form #api_form="ngForm">
+      <div class="flex-container">
+        <div class="box-container">
+          <div class="text-center heading-section1">
+            <h2>Create Mockup</h2>
+          </div>
+          <div class="form-group">
+            <label class="label-style">Request Type
+              <span class="text-danger">*</span>
+            </label>
+            <select class="form-control" [(ngModel)]="typeOfApi" [ngModelOptions]="{standalone: true}">
+              <option *ngFor="let api of apiTypeList" [value]="api.value">{{api.label}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="label-style">Api Path
+              <span class="text-danger">*</span>
+            </label>
+            <input placeholder="Enter Api Path" class="form-control" type="text" name="api_path" [(ngModel)]="apiPath">
+          </div>
+          <div class="form-group">
+            <label class="label-style">Api Name
+            </label>
+            <input placeholder="Enter Api Name" class="form-control" type="text" name="apiName" [(ngModel)]="apiName">
+          </div>
+          <div class="form-group">
+            <label class="label-style">Mock API Types
+              <span class="text-danger">*</span>
+            </label>
+            <select class="form-control" [(ngModel)]="mockApiType" [ngModelOptions]="{standalone: true}">
+              <option *ngFor="let api of mockupTypeList" [value]="api">{{api}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="label-style">Expected Response Body
+              <span class="text-danger">*</span>
+            </label>
+            <textarea placeholder="Enter Expected Response Body" class="form-control" rows="4" cols="50" name="expected_response" [(ngModel)]="expectedResponse">
+            </textarea>
+          </div>
+          <div class="form-group" *ngIf="mockApiType === 'ONLY_REQUEST_BODY' || mockApiType === 'WITH_QUERY_PARAM_AND_REQUEST_BODY'">
+            <label class="label-style">Request Body
+              <span class="text-danger">*</span>
+            </label>
+            <textarea placeholder="Enter Request Body" class="form-control" rows="4" cols="50" name="requestBody" [(ngModel)]="requestBody">
+            </textarea>
+          </div>
+          <div class="form-group" *ngIf="mockApiType === 'ONLY_REQUEST_BODY' || mockApiType === 'WITH_QUERY_PARAM_AND_REQUEST_BODY'">
+            <label class="label-style">Keyword
+              <span class="text-danger">*</span>
+            </label>
+            <input placeholder="Enter Keyword" class="form-control" type="text" name="eyword" [(ngModel)]="keyword">
+          </div>
+          <div class="form-group">
+            <label class="label-style aaaaa">Response Code
+              <span class="text-danger">*</span>
+            </label>
+            <select class="form-control" [(ngModel)]="responseCode" [ngModelOptions]="{standalone: true}">
+              <option *ngFor="let code of responseCodeList" [value]="code">{{code}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="label-style radio-heading">Enable Proxy
+              <span class="text-danger">*</span>
+            </label>
+            <div class="row">
+              <div class="col-sm-2 position-relative">
+                <input class="form-control radio-button" type="radio" name="enable_proxy" [(ngModel)]="enableProxy" id="enable_proxy_yes" [value]="true">
+                <label for="enable_proxy_yes" class="radio-label">Yes</label>
+              </div>
+              <div class="col-sm-2 position-relative">
+                <input class="form-control radio-button" type="radio" name="enable_proxy" [(ngModel)]="enableProxy" id="enable_proxy_no" [value]="false">
+                <label for="enable_proxy_no" class="radio-label">No</label>
+              </div>
+
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="label-style">Select Service
+              <span class="text-danger">*</span>
+            </label>
+            <select class="form-control" [(ngModel)]="serviceId" [ngModelOptions]="{standalone: true}">
+              <option *ngFor="let service of serviceTypeList" [value]="service.id">{{service.serviceName}}</option>
+            </select>
+          </div>
+          <div class="text-center form-group">
+            <button class="save-button1" type="button" (click)="saveApiChanges()">Save</button>
+          </div>
+          <!-- <div *ngIf="responseBody">
+            <div class="form-group has-feedback">
+              <label>
+                <span>Response Body</span>
+              </label>
+              <pre class="json-text-container">{{responseBody | json}}</pre>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

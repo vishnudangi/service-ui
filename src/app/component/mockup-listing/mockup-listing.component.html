@@ -1,0 +1,27 @@
+
+<div class="mackup-listing-container">
+  <div class="top-section">
+    <a class="create-mockup-button margin-10" routerLink="/server-detail" >Server Detail</a>
+    <a class="create-mockup-button margin-10" routerLink="/response-helper" >Response Helper</a>
+    <a class="create-mockup-button" routerLink="/create-mockup" >create mock API</a>
+  </div>
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-11">API Name</div>
+      <div class="col col-22">API path</div>
+      <div class="col col-33">API Type</div>
+      <div class="col col-44">Mocked API Path</div>
+      <div class="col col-55">Service Name</div>
+      <div class="col col-66">Expected Response</div>
+    </li>
+    <li class="table-row" *ngFor="let item of mockupList">
+      <div class="col col-11 text-elipses" data-label="Job Id" data-toggle="tooltip" data-placement="bottom" [title]="item.apiName">{{item.apiName}}
+      </div>
+      <div class="col col-22 text-elipses" data-label="Customer Name" data-toggle="tooltip" data-placement="bottom" [title]="item.apiPath">{{item.apiPath}}</div>
+      <div class="col col-33 text-elipses" data-label="Amount" data-toggle="tooltip" data-placement="bottom" [title]="item.apiType">{{item.apiType}}</div>
+      <div class="col col-44 text-elipses" data-label="Payment Status" data-toggle="tooltip" data-placement="bottom" [title]="item.mockedApiPath">{{item.mockedApiPath}}</div>
+      <div class="col col-55 text-elipses" data-label="Payment Status" data-toggle="tooltip" data-placement="bottom" [title]="item.serviceName">{{item.serviceName}}</div>
+      <div class="col col-66 text-elipses" data-label="Payment Status" data-toggle="tooltip" data-placement="bottom" [title]="item.expectedResponseBody">{{item.expectedResponseBody}}</div>
+    </li>
+  </ul>
+</div>

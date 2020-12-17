@@ -1,0 +1,15 @@
+.main-content-container {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100vh;
+  margin: 100px;
+}
+.json-text-container {
+  height: auto;
+    max-height: 400px;
+    min-height: 100px;
+    width: 452px;
+    width: 40%;
+    overflow: scroll;
+    border: 1px solid #ddd;
+}
